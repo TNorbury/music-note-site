@@ -58,15 +58,15 @@ This Service may contain links to other sites. If you click on a third-party lin
 
 These Services do not address anyone under the age of 13. I do not knowingly collect personally identifiable information from children under 13\. In the case I discover that a child under 13 has provided me with personal information, I immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact me so that I will be able to do necessary actions.
 
-**Revoking Consent (EEA)**
+**Revoking and Changing Consent (EEA)**
 
-If you wish to revoke your consent, this can be done from within the Music Note app, by going to the settings page, clicking on the "Data and Privacy" button, and then from that page clicking on "Revoke Consent". If you wish to give consent back, this can be done by clicking on the "Manage Data Collection" button.
+If you wish to revoke or change your consent, this can be done from within the Music Note app, by going to the settings page, clicking on the "Data and Privacy" button, and then from that page clicking on "Revoke/Change Consent".
 
 **Changes to This Privacy Policy**
 
 I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.
 
-This policy is effective as of 2020-10-13
+This policy is effective as of 2020-10-14
 
 **Contact Us**
 
