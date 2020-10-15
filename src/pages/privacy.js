@@ -8,6 +8,11 @@ import MyHelmet from "../components/helmet"
 const PrivacyPolicy = styled.div`
   color: white;
   padding: 2rem;
+
+  @media (max-width: 960px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 `
 
 export default function Privacy({ data }) {
