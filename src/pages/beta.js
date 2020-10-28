@@ -66,7 +66,7 @@ const BetaHeader = () => {
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScG2Sd1s1NBr1RL7c1oB9ZBOrIWTbVk329TGumNQwRmhaOUyw/viewform?usp=sf_link">
               here
             </a>{" "}
-            to sign up
+            to sign up and be notified when the beta starts!
           </BetaSignupLink>
         </Col>
       </Row>
