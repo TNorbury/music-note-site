@@ -79,32 +79,34 @@ export default function Beta({ data }) {
   const featuresHtml = data.featuresMd.html
 
   return (
-    <BetaWrapper>
+    <div>
       <MyHelmet title="Music Note | Beta" />
       <GlobalStyle />
       <Header />
-      <Container fluid={true}>
-        <BetaHeader></BetaHeader>
+      <BetaWrapper>
+        <Container fluid={true}>
+          <BetaHeader></BetaHeader>
 
-        <Row>
-          <Col sm="12" md="12">
-            <SectionHeader>Features</SectionHeader>
-            <SectionBody>
-              <Features dangerouslySetInnerHTML={{ __html: featuresHtml }} />
-            </SectionBody>
-          </Col>
-          {/* Uncomment Nov 1st */}
-          {/* <Col sm="12" md="6">
+          <Row>
+            <Col sm="12" md="12">
+              <SectionHeader>Features</SectionHeader>
+              <SectionBody>
+                <Features dangerouslySetInnerHTML={{ __html: featuresHtml }} />
+              </SectionBody>
+            </Col>
+            {/* Uncomment Nov 1st */}
+            {/* <Col sm="12" md="6">
             <SectionHeader>Feedback</SectionHeader>
             <SectionBody>
-              <FeedbackSpiel
+            <FeedbackSpiel
                 dangerouslySetInnerHTML={{ __html: feedbackHtml }}
-              />
-            </SectionBody>
-          </Col> */}
-        </Row>
-      </Container>
-    </BetaWrapper>
+                />
+                </SectionBody>
+              </Col> */}
+          </Row>
+        </Container>
+      </BetaWrapper>
+    </div>
   )
 }
 
