@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 import { GlobalStyle } from "../style/global_style"
 import MyHelmet from "../components/helmet"
+import Header from "../components/header"
 
 const PrivacyPolicy = styled.div`
   color: white;
@@ -23,6 +24,8 @@ export default function Privacy({ data }) {
     <React.Fragment>
       <MyHelmet title="Music Note | Privacy Policy" />
       <GlobalStyle />
+      <Header />
+
       <PrivacyPolicy dangerouslySetInnerHTML={{ __html: html }}></PrivacyPolicy>
     </React.Fragment>
   )

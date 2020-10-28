@@ -15,14 +15,16 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.11.1",
-    "gatsby": "^2.24.67",
+    "bootstrap": "^4.5.3",
+    "gatsby": "^2.24.85",
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-styled-components": "^3.3.14",
     "gatsby-source-filesystem": "^2.3.34",
     "gatsby-transformer-remark": "^2.8.38",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
+    "reactstrap": "^8.6.0",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {
