@@ -45,6 +45,9 @@ const Header = () => {
             <NavItem>
               <NavLink href="/privacy">Privacy</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink href="/eula">EULA</NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
