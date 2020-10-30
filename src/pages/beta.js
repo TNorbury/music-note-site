@@ -22,6 +22,7 @@ const BetaSignupLink = styled.h3`
 const SectionHeader = styled.h4`
   padding-bottom: 0.5rem;
   border-bottom: 1px solid black;
+  margin-top: 1rem;
 `
 
 const SectionBody = styled.div`
@@ -47,6 +48,16 @@ const FeedbackSpiel = styled.div`
     @media (max-width: 960px) {
       width: 100%;
     }
+  }
+`
+
+const BetaSteps = styled.div`
+  text-align: left;
+  p {
+    margin-bottom: 0.25rem;
+  }
+  ul {
+    margin-bottom: 0.25rem;
   }
 `
 
@@ -77,6 +88,7 @@ const BetaHeader = () => {
 export default function Beta({ data }) {
   const feedbackHtml = data.feedbackMd.html
   const featuresHtml = data.featuresMd.html
+  const stepsHtml = data.stepsMd.html
 
   return (
     <div>
@@ -88,21 +100,29 @@ export default function Beta({ data }) {
           <BetaHeader></BetaHeader>
 
           <Row>
-            <Col sm="12" md="12">
+            <Col sm="12" md={{ size: 6, offset: 3 }}>
+              <BetaSteps
+                dangerouslySetInnerHTML={{ __html: stepsHtml }}
+              ></BetaSteps>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col sm="12" md={{ size: 6 }}>
               <SectionHeader>Features</SectionHeader>
               <SectionBody>
                 <Features dangerouslySetInnerHTML={{ __html: featuresHtml }} />
               </SectionBody>
             </Col>
             {/* Uncomment Nov 1st */}
-            {/* <Col sm="12" md="6">
-            <SectionHeader>Feedback</SectionHeader>
-            <SectionBody>
-            <FeedbackSpiel
-                dangerouslySetInnerHTML={{ __html: feedbackHtml }}
+            <Col sm="12" md="6">
+              <SectionHeader>Feedback</SectionHeader>
+              <SectionBody>
+                <FeedbackSpiel
+                  dangerouslySetInnerHTML={{ __html: feedbackHtml }}
                 />
-                </SectionBody>
-              </Col> */}
+              </SectionBody>
+            </Col>
           </Row>
         </Container>
       </BetaWrapper>
@@ -120,6 +140,9 @@ export const pageQuery = graphql`
     featuresMd: markdownRemark(
       frontmatter: { title: { eq: "beta/features" } }
     ) {
+      html
+    }
+    stepsMd: markdownRemark(frontmatter: { title: { eq: "beta/steps" } }) {
       html
     }
   }
