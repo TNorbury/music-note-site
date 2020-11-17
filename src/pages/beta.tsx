@@ -19,13 +19,6 @@ const BetaWrapper = styled.div`
   color: white;
 `
 
-const BetaSignupHeader = styled.h2`
-  text-align: center;
-`
-const BetaSignupLink = styled.h3`
-  text-align: center;
-`
-
 const SectionHeader = styled.h4`
   padding-bottom: 0.5rem;
   border-bottom: 1px solid black;
@@ -72,19 +65,23 @@ const BetaHeader = () => {
   const BetaHeaderWrapper = styled.div`
     margin-bottom: 1.5rem;
   `
+  const BetaSignupHeader = styled.h2`
+    text-align: center;
+  `
+  const BetaSignupLink = styled.h3`
+    text-align: center;
+  `
   return (
     <BetaHeaderWrapper>
       <Row>
         <Col>
-          <BetaSignupHeader>
-            Music Note is about to enter open beta!
-          </BetaSignupHeader>
+          <BetaSignupHeader>Music Note is now in open beta!</BetaSignupHeader>
           <BetaSignupLink>
             Click{" "}
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScG2Sd1s1NBr1RL7c1oB9ZBOrIWTbVk329TGumNQwRmhaOUyw/viewform?usp=sf_link">
               here
             </a>{" "}
-            to sign up and be notified when the beta starts!
+            to sign up !
           </BetaSignupLink>
         </Col>
       </Row>

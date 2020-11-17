@@ -40,7 +40,9 @@ export default function Home() {
       <Container fluid={true}>
         <Row>
           <Col>
-            <MessageWrapper>Open Beta starts November 2nd!</MessageWrapper>
+            <MessageWrapper>
+              Music Note is currently in open beta!
+            </MessageWrapper>
             <MoreBetaInfo>
               <a href="/beta">Click here</a> for more info!
             </MoreBetaInfo>
