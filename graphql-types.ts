@@ -2151,6 +2151,11 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
+export type BetaPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type BetaPageQuery = { feedbackMd?: Maybe<Pick<MarkdownRemark, 'html'>>, featuresMd?: Maybe<Pick<MarkdownRemark, 'html'>>, stepsMd?: Maybe<Pick<MarkdownRemark, 'html'>> };
+
 export type PrivacyPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
