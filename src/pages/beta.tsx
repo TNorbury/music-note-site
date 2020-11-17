@@ -7,6 +7,13 @@ import MyHelmet from "../components/helmet"
 import Header from "../components/header"
 import { Col, Container, Row } from "reactstrap"
 
+import { BetaPageQuery } from "../../graphql-types"
+
+interface PrivacyPageProps {
+  data: BetaPageQuery
+  location: Location
+}
+
 const BetaWrapper = styled.div`
   text-align: center;
   color: white;
@@ -85,53 +92,56 @@ const BetaHeader = () => {
   )
 }
 
-export default function Beta({ data }) {
-  const feedbackHtml = data.feedbackMd.html
-  const featuresHtml = data.featuresMd.html
-  const stepsHtml = data.stepsMd.html
+export default class Beta extends React.Component<PrivacyPageProps> {
+  public render() {
+    const feedbackHtml = this.props.data.feedbackMd.html
+    const featuresHtml = this.props.data.featuresMd.html
+    const stepsHtml = this.props.data.stepsMd.html
+    return (
+      <div>
+        <MyHelmet title="Music Note | Beta" />
+        <GlobalStyle />
+        <Header />
+        <BetaWrapper>
+          <Container fluid={true}>
+            <BetaHeader></BetaHeader>
 
-  return (
-    <div>
-      <MyHelmet title="Music Note | Beta" />
-      <GlobalStyle />
-      <Header />
-      <BetaWrapper>
-        <Container fluid={true}>
-          <BetaHeader></BetaHeader>
+            <Row>
+              <Col sm="12" md={{ size: 6, offset: 3 }}>
+                <BetaSteps
+                  dangerouslySetInnerHTML={{ __html: stepsHtml }}
+                ></BetaSteps>
+              </Col>
+            </Row>
 
-          <Row>
-            <Col sm="12" md={{ size: 6, offset: 3 }}>
-              <BetaSteps
-                dangerouslySetInnerHTML={{ __html: stepsHtml }}
-              ></BetaSteps>
-            </Col>
-          </Row>
-
-          <Row>
-            <Col sm="12" md={{ size: 6 }}>
-              <SectionHeader>Features</SectionHeader>
-              <SectionBody>
-                <Features dangerouslySetInnerHTML={{ __html: featuresHtml }} />
-              </SectionBody>
-            </Col>
-            {/* Uncomment Nov 1st */}
-            <Col sm="12" md="6">
-              <SectionHeader>Feedback</SectionHeader>
-              <SectionBody>
-                <FeedbackSpiel
-                  dangerouslySetInnerHTML={{ __html: feedbackHtml }}
-                />
-              </SectionBody>
-            </Col>
-          </Row>
-        </Container>
-      </BetaWrapper>
-    </div>
-  )
+            <Row>
+              <Col sm="12" md={{ size: 6 }}>
+                <SectionHeader>Features</SectionHeader>
+                <SectionBody>
+                  <Features
+                    dangerouslySetInnerHTML={{ __html: featuresHtml }}
+                  />
+                </SectionBody>
+              </Col>
+              {/* Uncomment Nov 1st */}
+              <Col sm="12" md="6">
+                <SectionHeader>Feedback</SectionHeader>
+                <SectionBody>
+                  <FeedbackSpiel
+                    dangerouslySetInnerHTML={{ __html: feedbackHtml }}
+                  />
+                </SectionBody>
+              </Col>
+            </Row>
+          </Container>
+        </BetaWrapper>
+      </div>
+    )
+  }
 }
 
 export const pageQuery = graphql`
-  query {
+  query BetaPage {
     feedbackMd: markdownRemark(
       frontmatter: { title: { eq: "beta/feedback" } }
     ) {
