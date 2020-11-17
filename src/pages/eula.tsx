@@ -27,7 +27,7 @@ const EulaWrapper = styled.div`
 export default function Eula() {
   return (
     <div>
-      <MyHelmet title="Music Note | Beta" />
+      <MyHelmet title="EULA" />
       <GlobalStyle />
       <Header />
       <EulaWrapper>

@@ -96,7 +96,7 @@ export default class Beta extends React.Component<PrivacyPageProps> {
     const stepsHtml = this.props.data.stepsMd.html
     return (
       <div>
-        <MyHelmet title="Music Note | Beta" />
+        <MyHelmet title="Beta" />
         <GlobalStyle />
         <Header />
         <BetaWrapper>

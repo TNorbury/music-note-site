@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 
-import { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -9,5 +9,15 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     color: blue;
+  }
+`
+
+export const PageWrapper = styled.div`
+  color: white;
+  padding: 2rem;
+
+  @media (max-width: 960px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 `

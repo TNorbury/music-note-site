@@ -34,7 +34,7 @@ const MoreBetaInfo = styled.h3`
 export default function Home() {
   return (
     <React.Fragment>
-      <MyHelmet title="Music Note" />
+      <MyHelmet />
       <GlobalStyle />
       <Header />
       <Container fluid={true}>
