@@ -16,8 +16,6 @@ const Brand = styled.div`
     @media (max-width: 960px) {
         width: 150px;
     }
-
-    
 `
 
 const Header = () => {
