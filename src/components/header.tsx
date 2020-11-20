@@ -10,7 +10,7 @@ import {
   NavLink,
 } from "reactstrap"
 import styled from "styled-components"
-import { GlobalStyle } from "../style/global_style"
+import { GlobalStyle, PageWrapper } from "../style/global_style"
 import MyHelmet from "./helmet"
 
 interface HeaderProps extends HelmetProps {}
@@ -58,20 +58,29 @@ export default class Header extends React.Component<HeaderProps, HeaderState> {
           <NavbarToggler onClick={() => this.toggle()} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/beta">Beta</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/privacy">Privacy</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/eula">EULA</NavLink>
-              </NavItem>
+              <NavBarItem link="/beta" title="Beta" />
+              <NavBarItem link="/privacy" title="Privacy" />
+              <NavBarItem link="/eula" title="EULA" />
             </Nav>
           </Collapse>
         </Navbar>
-        {this.props.children}
+        <PageWrapper>{this.props.children}</PageWrapper>
       </div>
+    )
+  }
+}
+
+interface NavBarItemProps {
+  link: string
+  title: string
+}
+
+class NavBarItem extends React.Component<NavBarItemProps> {
+  render() {
+    return (
+      <NavItem>
+        <NavLink href={this.props.link}>{this.props.title}</NavLink>
+      </NavItem>
     )
   }
 }

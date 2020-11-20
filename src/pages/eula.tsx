@@ -3,14 +3,6 @@ import styled from "styled-components"
 import Header from "../components/header"
 
 const EulaWrapper = styled.div`
-  color: white;
-  padding: 2rem;
-
-  @media (max-width: 960px) {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
   .company_name {
     font-weight: bold;
     font-style: italic;
@@ -82,7 +74,7 @@ export default function Eula() {
           Software, unless other terms accompany those items on delivery. If so,
           those terms apply.
         </p>
-        <h3>License Grant</h3>
+        <h4>License Grant</h4>
 
         <p>
           <span className="company_name">Tyler Norbury</span> hereby grants you
@@ -128,7 +120,7 @@ export default function Eula() {
           </li>
         </ul>
 
-        <h3>Intellectual Property and Ownership</h3>
+        <h4>Intellectual Property and Ownership</h4>
 
         <p>
           <span className="company_name">Tyler Norbury</span> shall at all times
@@ -145,7 +137,7 @@ export default function Eula() {
           to grant licences to use the Software to third parties.
         </p>
 
-        <h3>Termination</h3>
+        <h4>Termination</h4>
 
         <p>
           This EULA agreement is effective from the date you first use the
@@ -163,7 +155,7 @@ export default function Eula() {
           agreement.
         </p>
 
-        <h3>Governing Law</h3>
+        <h4>Governing Law</h4>
 
         <p>
           This EULA agreement, and any dispute arising out of or in connection

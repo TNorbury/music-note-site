@@ -6,13 +6,12 @@ import Header from "../components/header"
 
 const MessageWrapper = styled.h1`
   text-align: center;
-  color: white;
 `
 
 const ImageWrapper = styled.div`
   img {
     width: 100%;
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
   }
 
   padding-left: 33%;
@@ -26,7 +25,6 @@ const ImageWrapper = styled.div`
 
 const MoreBetaInfo = styled.h4`
   text-align: center;
-  color: white;
 `
 
 export default function Home() {

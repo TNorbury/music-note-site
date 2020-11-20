@@ -12,7 +12,6 @@ interface BetaPageProps {
 
 const BetaWrapper = styled.div`
   text-align: center;
-  color: white;
 `
 
 const SectionHeader = styled.h4`

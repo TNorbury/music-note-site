@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background: #607d8b;
     font-family: var(--raleway-font-chain);
+    color: white;
   }
 
   a {
@@ -31,13 +32,12 @@ export const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
-    font-family: var(--raleway-font-chaind);
+    font-family: var(--raleway-font-chain);
     font-weight: bold;
   }
   `
 
 export const PageWrapper = styled.div`
-  color: white;
   padding: 2rem;
 
   @media (max-width: 960px) {
