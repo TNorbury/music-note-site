@@ -11,6 +11,7 @@ import {
 } from "reactstrap"
 import styled from "styled-components"
 import { GlobalStyle, PageWrapper } from "../style/global_style"
+import Footer from "./footer"
 import MyHelmet from "./helmet"
 
 interface HeaderProps extends HelmetProps {}
@@ -29,7 +30,7 @@ const Brand = styled.div`
 `
 
 export default class Header extends React.Component<HeaderProps, HeaderState> {
-  constructor(props) {
+  constructor(props: HeaderProps | Readonly<HeaderProps>) {
     super(props)
 
     this.state = {
@@ -60,12 +61,11 @@ export default class Header extends React.Component<HeaderProps, HeaderState> {
             <Nav className="ml-auto" navbar>
               <NavBarItem link="/features" title="Features" />
               <NavBarItem link="/beta" title="Beta" />
-              <NavBarItem link="/privacy" title="Privacy" />
-              <NavBarItem link="/eula" title="EULA" />
             </Nav>
           </Collapse>
         </Navbar>
         <PageWrapper>{this.props.children}</PageWrapper>
+        <Footer />
       </div>
     )
   }
