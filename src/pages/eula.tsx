@@ -1,9 +1,5 @@
 import React from "react"
-
 import styled from "styled-components"
-
-import { GlobalStyle } from "../style/global_style"
-import MyHelmet from "../components/helmet"
 import Header from "../components/header"
 
 const EulaWrapper = styled.div`
@@ -26,10 +22,7 @@ const EulaWrapper = styled.div`
 `
 export default function Eula() {
   return (
-    <div>
-      <MyHelmet title="EULA" />
-      <GlobalStyle />
-      <Header />
+    <Header title="EULA">
       <EulaWrapper>
         <h2>
           End-User License Agreement (EULA) of{" "}
@@ -178,6 +171,6 @@ export default function Eula() {
           accordance with the laws of <span className="country">us</span>.
         </p>
       </EulaWrapper>
-    </div>
+    </Header>
   )
 }
