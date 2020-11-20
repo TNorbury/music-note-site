@@ -3,9 +3,16 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import styled, { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
+  :root {
+    // Idk if 'font chain' is the correct term, but I guess what I'm trying to 
+    // get at is that this is the chain of fonts that fallback will follow.
+    --raleway-font-chain: Raleway, Arial, sans-serif;
+    --staatliches-font-chain: Staatliches, fantasy;
+  }
+
   body {
     background: #607d8b;
-    font-family: Raleway;
+    font-family: var(--raleway-font-chain);
   }
 
   a {
@@ -16,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
   h1,
   h2,
   h3 {
-    font-family: Staatliches;
+    font-family: var(--staatliches-font-chain);
     letter-spacing: 1px;
   }
 
@@ -24,7 +31,7 @@ export const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6 {
-    font-family: Raleway;
+    font-family: var(--raleway-font-chaind);
     font-weight: bold;
   }
   `
