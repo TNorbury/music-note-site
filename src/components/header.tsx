@@ -58,6 +58,7 @@ export default class Header extends React.Component<HeaderProps, HeaderState> {
           <NavbarToggler onClick={() => this.toggle()} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
+              <NavBarItem link="/features" title="Features" />
               <NavBarItem link="/beta" title="Beta" />
               <NavBarItem link="/privacy" title="Privacy" />
               <NavBarItem link="/eula" title="EULA" />

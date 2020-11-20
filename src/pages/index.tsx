@@ -3,7 +3,6 @@ import { Col, Container, Row } from "reactstrap"
 import styled from "styled-components"
 import Header from "../components/header"
 
-
 const MessageWrapper = styled.h1`
   text-align: center;
 `

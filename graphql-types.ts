@@ -596,6 +596,9 @@ export type FileFieldsEnum =
   | 'internal___type'
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
+  | 'childMarkdownRemark___frontmatter___feature'
+  | 'childMarkdownRemark___frontmatter___label'
+  | 'childMarkdownRemark___frontmatter___order'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -862,6 +865,9 @@ export type MarkdownRemarkEdge = {
 export type MarkdownRemarkFieldsEnum = 
   | 'id'
   | 'frontmatter___title'
+  | 'frontmatter___feature'
+  | 'frontmatter___label'
+  | 'frontmatter___order'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -983,10 +989,16 @@ export type MarkdownRemarkFilterInput = {
 
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>;
+  feature?: Maybe<Scalars['String']>;
+  label?: Maybe<Scalars['String']>;
+  order?: Maybe<Scalars['Int']>;
 };
 
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
+  feature?: Maybe<StringQueryOperatorInput>;
+  label?: Maybe<StringQueryOperatorInput>;
+  order?: Maybe<IntQueryOperatorInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -2151,6 +2163,14 @@ export type BetaPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type BetaPageQuery = { feedbackMd?: Maybe<Pick<MarkdownRemark, 'html'>>, featuresMd?: Maybe<Pick<MarkdownRemark, 'html'>>, stepsMd?: Maybe<Pick<MarkdownRemark, 'html'>> };
+
+export type FeaturesPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FeaturesPageQuery = { allMarkdownRemark: { edges: Array<{ node: (
+        Pick<MarkdownRemark, 'html'>
+        & { frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'feature' | 'label'>> }
+      ) }> } };
 
 export type PrivacyPageQueryVariables = Exact<{ [key: string]: never; }>;
 
