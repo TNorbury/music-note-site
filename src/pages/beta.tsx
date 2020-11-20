@@ -68,7 +68,7 @@ const BetaHeader = () => {
   const BetaSignupHeader = styled.h2`
     text-align: center;
   `
-  const BetaSignupLink = styled.h3`
+  const BetaSignupLink = styled.h4`
     text-align: center;
   `
   return (

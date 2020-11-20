@@ -17,6 +17,16 @@ export default class MyHelmet extends React.Component<HelmetProps> {
       <HelmetProvider>
         <Helmet>
           <title>{title}</title>
+          {/* Load the fonts we're using. Raleway is for the body, Staatliches 
+              is for big headers */}
+          <link
+            href="https://fonts.googleapis.com/css?family=Raleway:normal,bold&display=swap"
+            rel="stylesheet"
+          ></link>
+          <link
+            href="https://fonts.googleapis.com/css?family=Staatliches&display=swap"
+            rel="stylesheet"
+          ></link>
         </Helmet>
       </HelmetProvider>
     )

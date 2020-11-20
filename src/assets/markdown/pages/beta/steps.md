@@ -2,7 +2,7 @@
 title: "beta/steps"
 ---
 
-### How the beta process will work
+#### How the beta process will work
 
 1. You sign up at the link above
 2. When you complete the form you'll be given two links to choose from, depending on what platform you're on, to register with Firebase App Distribution, the service I'm using to deliver the beta builds to you!  
@@ -15,6 +15,6 @@ If you already closed the form, no problem, here are the links:
 4. You'll then receive an email when the app is ready to download. You'll also receive an email every time the beta app has been updated.
 5. From this point on just play around with the app! Find ways to break it (and let me know when you do), think of features you'd like to see, and tell your friends!
 
-#### Important
+##### Important
 
 I'm not 100% certain if the data you create in the beta (albums, lists, etc.) will carry over to the release version of the app. As such, I wouldn't recommend logging your entire listening history (unless you're trying to that for testing purposes), because I can't promise that it'll be around when the app is released.

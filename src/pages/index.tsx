@@ -26,7 +26,7 @@ const ImageWrapper = styled.div`
   }
 `
 
-const MoreBetaInfo = styled.h3`
+const MoreBetaInfo = styled.h4`
   text-align: center;
   color: white;
 `
