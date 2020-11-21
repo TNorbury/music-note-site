@@ -1,22 +1,17 @@
-import React from "react"
 import { graphql } from "gatsby"
-import styled from "styled-components"
-
-import { GlobalStyle } from "../style/global_style"
-import MyHelmet from "../components/helmet"
-import Header from "../components/header"
+import React from "react"
 import { Col, Container, Row } from "reactstrap"
-
+import styled from "styled-components"
 import { BetaPageQuery } from "../../graphql-types"
+import Header from "../components/header"
 
-interface PrivacyPageProps {
+interface BetaPageProps {
   data: BetaPageQuery
   location: Location
 }
 
 const BetaWrapper = styled.div`
   text-align: center;
-  color: white;
 `
 
 const SectionHeader = styled.h4`
@@ -89,16 +84,13 @@ const BetaHeader = () => {
   )
 }
 
-export default class Beta extends React.Component<PrivacyPageProps> {
+export default class Beta extends React.Component<BetaPageProps> {
   public render() {
     const feedbackHtml = this.props.data.feedbackMd.html
     const featuresHtml = this.props.data.featuresMd.html
     const stepsHtml = this.props.data.stepsMd.html
     return (
-      <div>
-        <MyHelmet title="Beta" />
-        <GlobalStyle />
-        <Header />
+      <Header title="Beta">
         <BetaWrapper>
           <Container fluid={true}>
             <BetaHeader></BetaHeader>
@@ -120,7 +112,6 @@ export default class Beta extends React.Component<PrivacyPageProps> {
                   />
                 </SectionBody>
               </Col>
-              {/* Uncomment Nov 1st */}
               <Col sm="12" md="6">
                 <SectionHeader>Feedback</SectionHeader>
                 <SectionBody>
@@ -132,7 +123,7 @@ export default class Beta extends React.Component<PrivacyPageProps> {
             </Row>
           </Container>
         </BetaWrapper>
-      </div>
+      </Header>
     )
   }
 }
