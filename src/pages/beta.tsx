@@ -14,7 +14,7 @@ const BetaWrapper = styled.div`
   text-align: center;
 `
 
-const SectionHeader = styled.h4`
+const SectionHeader = styled.h2`
   padding-bottom: 0.5rem;
   border-bottom: 1px solid black;
   margin-top: 1rem;
@@ -60,17 +60,19 @@ const BetaHeader = () => {
   const BetaHeaderWrapper = styled.div`
     margin-bottom: 1.5rem;
   `
-  const BetaSignupHeader = styled.h2`
+  const BetaSignupHeader = styled.h1`
     text-align: center;
   `
-  const BetaSignupLink = styled.h4`
+  const BetaSignupLink = styled.h2`
     text-align: center;
+    font-family: var(--raleway-font-chain);
+    font-size: 1.5rem;
   `
   return (
     <BetaHeaderWrapper>
       <Row>
         <Col>
-          <BetaSignupHeader>Music Note is now in open beta!</BetaSignupHeader>
+          <BetaSignupHeader>Music Note Open Beta</BetaSignupHeader>
           <BetaSignupLink>
             Click{" "}
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScG2Sd1s1NBr1RL7c1oB9ZBOrIWTbVk329TGumNQwRmhaOUyw/viewform?usp=sf_link">

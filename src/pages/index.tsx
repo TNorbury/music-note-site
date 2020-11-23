@@ -29,7 +29,7 @@ const MoreBetaInfo = styled.h4`
 export default function Home() {
   return (
     <React.Fragment>
-      <Header>
+      <Header includeDescription={true}>
         <Container fluid={true}>
           <Row>
             <Col>

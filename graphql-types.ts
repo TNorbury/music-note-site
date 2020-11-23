@@ -1853,8 +1853,6 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -1990,8 +1988,6 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Int']>;
-  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2193,8 +2189,7 @@ export type SiteFieldsEnum =
   | 'buildTime'
   | 'siteMetadata___title'
   | 'siteMetadata___description'
-  | 'port'
-  | 'host'
+  | 'siteMetadata___twitterAccount'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2287,8 +2282,6 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2857,11 +2850,13 @@ export type SitePluginSortInput = {
 export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
+  twitterAccount?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
+  twitterAccount?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteSortInput = {
@@ -2894,6 +2889,11 @@ export type TransformOptions = {
 export type WebPOptions = {
   quality?: Maybe<Scalars['Int']>;
 };
+
+export type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SiteMetadataQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'twitterAccount'>> }> };
 
 export type BetaPageQueryVariables = Exact<{ [key: string]: never; }>;
 

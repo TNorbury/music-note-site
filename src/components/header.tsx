@@ -1,5 +1,4 @@
 import React from "react"
-import { HelmetProps } from "react-helmet-async"
 import {
   Collapse,
   Nav,
@@ -7,14 +6,14 @@ import {
   NavbarBrand,
   NavbarToggler,
   NavItem,
-  NavLink,
+  NavLink
 } from "reactstrap"
 import styled from "styled-components"
 import { GlobalStyle, PageWrapper } from "../style/global_style"
 import Footer from "./footer"
-import MyHelmet from "./helmet"
+import MyHelmet, { MyHelmetProps } from "./helmet"
 
-interface HeaderProps extends HelmetProps {}
+interface HeaderProps extends MyHelmetProps {}
 
 interface HeaderState {
   isOpen: boolean
@@ -46,7 +45,10 @@ export default class Header extends React.Component<HeaderProps, HeaderState> {
     return (
       <div>
         <GlobalStyle />
-        <MyHelmet title={this.props.title} />
+        <MyHelmet
+          title={this.props.title}
+          includeDescription={this.props.includeDescription}
+        />
         <Navbar color="dark" dark expand="md">
           <NavbarBrand href="/">
             <Brand>
