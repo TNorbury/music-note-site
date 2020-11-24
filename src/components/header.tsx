@@ -48,6 +48,7 @@ export default class Header extends React.Component<HeaderProps, HeaderState> {
         <MyHelmet
           title={this.props.title}
           includeDescription={this.props.includeDescription}
+          path={this.props.path}
         />
         <Navbar color="dark" dark expand="md">
           <NavbarBrand href="/">

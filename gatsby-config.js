@@ -3,6 +3,7 @@ module.exports = {
     title: `Music Note`,
     description: `Keep track of your music history! Log albums, create lists, import from Spotify and more! Coming soon to Android and iOS`,
     twitterAccount: "@MusicNoteApp",
+    url: "https://www.music-note.app"
   },
   plugins: [
     {

@@ -2190,6 +2190,7 @@ export type SiteFieldsEnum =
   | 'siteMetadata___title'
   | 'siteMetadata___description'
   | 'siteMetadata___twitterAccount'
+  | 'siteMetadata___url'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2851,12 +2852,14 @@ export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   twitterAccount?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   twitterAccount?: Maybe<StringQueryOperatorInput>;
+  url?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteSortInput = {
@@ -2893,7 +2896,7 @@ export type WebPOptions = {
 export type SiteMetadataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type SiteMetadataQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'twitterAccount'>> }> };
+export type SiteMetadataQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'twitterAccount' | 'url'>> }> };
 
 export type BetaPageQueryVariables = Exact<{ [key: string]: never; }>;
 

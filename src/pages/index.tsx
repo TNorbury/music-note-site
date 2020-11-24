@@ -1,3 +1,4 @@
+import { PageProps } from "gatsby"
 import React from "react"
 import { Col, Container, Row } from "reactstrap"
 import styled from "styled-components"
@@ -26,10 +27,10 @@ const MoreBetaInfo = styled.h4`
   text-align: center;
 `
 
-export default function Home() {
+export default function Home(props: PageProps) {
   return (
     <React.Fragment>
-      <Header includeDescription={true}>
+      <Header includeDescription={true} path={props.path}>
         <Container fluid={true}>
           <Row>
             <Col>

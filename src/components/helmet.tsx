@@ -6,6 +6,7 @@ import { SiteMetadataQuery } from "../../graphql-types"
 export interface MyHelmetProps {
   title?: string
   includeDescription?: boolean
+  path: string
 }
 
 export default function MyHelmet(props: MyHelmetProps) {
@@ -17,6 +18,7 @@ export default function MyHelmet(props: MyHelmetProps) {
             title
             description
             twitterAccount
+            url
           }
         }
       }
@@ -54,6 +56,7 @@ export default function MyHelmet(props: MyHelmetProps) {
         ]}
       >
         <title>{props.title}</title>
+        <link href={siteMetadata.url + props.path} rel="canonical" />
 
         {/* Load the fonts we're using. Raleway is for the body, Staatliches 
               is for big headers */}

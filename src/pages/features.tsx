@@ -66,7 +66,7 @@ export default class FeaturesPage extends React.Component<FeaturesPageProps> {
     const images = this.props.data.images
 
     return (
-      <Header title="Features">
+      <Header title="Features" path={this.props.path}>
         <FeatureHeader>Features</FeatureHeader>
         <FeaturesList>
           <Container fluid={true}>

@@ -1,3 +1,4 @@
+import { PageProps } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import Header from "../components/header"
@@ -12,9 +13,9 @@ const EulaWrapper = styled.div`
     font-style: italic;
   }
 `
-export default function Eula() {
+export default function Eula(props: PageProps) {
   return (
-    <Header title="EULA">
+    <Header title="EULA" path={props.path}>
       <EulaWrapper>
         <h2>
           End-User License Agreement (EULA) of{" "}

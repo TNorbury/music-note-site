@@ -1,13 +1,12 @@
-import { graphql } from "gatsby"
+import { graphql, PageProps } from "gatsby"
 import React from "react"
 import { Col, Container, Row } from "reactstrap"
 import styled from "styled-components"
 import { BetaPageQuery } from "../../graphql-types"
 import Header from "../components/header"
 
-interface BetaPageProps {
+interface BetaPageProps extends PageProps {
   data: BetaPageQuery
-  location: Location
 }
 
 const BetaWrapper = styled.div`
@@ -56,18 +55,18 @@ const BetaSteps = styled.div`
   }
 `
 
+const BetaHeaderWrapper = styled.div`
+  margin-bottom: 1.5rem;
+`
+const BetaSignupHeader = styled.h1`
+  text-align: center;
+`
+const BetaSignupLink = styled.h2`
+  text-align: center;
+  font-family: var(--raleway-font-chain);
+  font-size: 1.5rem;
+`
 const BetaHeader = () => {
-  const BetaHeaderWrapper = styled.div`
-    margin-bottom: 1.5rem;
-  `
-  const BetaSignupHeader = styled.h1`
-    text-align: center;
-  `
-  const BetaSignupLink = styled.h2`
-    text-align: center;
-    font-family: var(--raleway-font-chain);
-    font-size: 1.5rem;
-  `
   return (
     <BetaHeaderWrapper>
       <Row>
@@ -92,7 +91,7 @@ export default class Beta extends React.Component<BetaPageProps> {
     const featuresHtml = this.props.data.featuresMd.html
     const stepsHtml = this.props.data.stepsMd.html
     return (
-      <Header title="Beta">
+      <Header title="Beta" path={this.props.path}>
         <BetaWrapper>
           <Container fluid={true}>
             <BetaHeader></BetaHeader>

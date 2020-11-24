@@ -1,3 +1,4 @@
+import { PageProps } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import Header from "../components/header"
@@ -12,9 +13,9 @@ const MailLink = styled.span`
   }
 `
 
-export default function Support() {
+export default function Support(props: PageProps) {
   return (
-    <Header title="Support">
+    <Header title="Support" path={props.path}>
       <SupportMessage>
         Run into an issue, need help with the app, or just want to reach out?
         Send an email to <MailLink>support@music-note.app</MailLink>
