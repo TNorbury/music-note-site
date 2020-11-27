@@ -62,11 +62,13 @@ export default function MyHelmet(props: MyHelmetProps) {
               is for big headers */}
         <link
           href="https://fonts.googleapis.com/css?family=Raleway:normal,bold&display=swap"
-          rel="stylesheet"
+          rel="preload"
+          as="style"
         ></link>
         <link
           href="https://fonts.googleapis.com/css?family=Staatliches&display=swap"
-          rel="stylesheet"
+          rel="preload"
+          as="style"
         ></link>
       </Helmet>
     </HelmetProvider>
