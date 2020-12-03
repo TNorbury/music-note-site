@@ -38,7 +38,9 @@ export const GlobalStyle = createGlobalStyle`
   `
 
 export const PageWrapper = styled.div`
-  padding: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 3.5rem;
 
   @media (max-width: 960px) {
     padding-left: 1rem;

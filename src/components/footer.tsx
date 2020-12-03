@@ -2,7 +2,7 @@ import React from "react"
 import { Col, Container, Row } from "reactstrap"
 import styled from "styled-components"
 
-const FooterStyle = styled.div`
+const FooterStyle = styled.footer`
   font-size: 11pt;
   text-align: center;
 

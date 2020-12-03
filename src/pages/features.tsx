@@ -47,7 +47,10 @@ const FeatureDescriptions = styled.div`
 `
 
 const Feature = styled.div`
-  margin-bottom: 2rem;
+  // padding-bottom: 3.5rem;
+`
+const FeatureTag = styled.div`
+  padding-bottom: 3.5rem;
 `
 
 const ImageWrapper = styled.div`
@@ -96,7 +99,8 @@ export default class FeaturesPage extends React.Component<FeaturesPageProps> {
               )[0]
               return (
                 <Feature>
-                  <Row id={feature.frontmatter.feature}>
+                  <FeatureTag id={feature.frontmatter.feature}></FeatureTag>
+                  <Row>
                     <Col sm={{ size: 12 }} md={{ size: 4, offset: 2 }}>
                       <div
                         dangerouslySetInnerHTML={{

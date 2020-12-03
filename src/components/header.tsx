@@ -50,7 +50,7 @@ export default class Header extends React.Component<HeaderProps, HeaderState> {
           includeDescription={this.props.includeDescription}
           path={this.props.path}
         />
-        <Navbar color="dark" dark expand="md">
+        <Navbar color="dark" dark expand="md" fixed="top">
           <NavbarBrand href="/">
             <Brand>
               <img
