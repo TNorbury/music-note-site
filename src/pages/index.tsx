@@ -1,10 +1,10 @@
 import { graphql, PageProps } from "gatsby"
-import Img from "gatsby-image"
 import React from "react"
 import { Col, Container, Row } from "reactstrap"
 import styled from "styled-components"
 import { HomePageQuery } from "../../graphql-types"
 import Header from "../components/header"
+import StoreBadge from "../components/store_badge"
 
 const MessageWrapperH1 = styled.h1`
   text-align: center;
@@ -66,22 +66,20 @@ export default function Home(props: HomePageProps) {
             </Col>
           </Row>
           <Row>
-            <Col md={{ size: 3, offset: 3 }}>
-              <a href="https://play.google.com/store/apps/details?id=com.musicnote.album_rater">
-                <Img
-                  alt="Get it on Google Play"
-                  fluid={playStoreBadge.node.childImageSharp.fluid}
-                ></Img>
-              </a>
+            <Col xs={{ size: 10, offset: 1 }} md={{ size: 3, offset: 3 }}>
+              <StoreBadge
+                alt="Get it on Google Play"
+                fluidImg={playStoreBadge.node.childImageSharp.fluid}
+                href="https://play.google.com/store/apps/details?id=com.musicnote.album_rater"
+              />
             </Col>
 
-            <Col md={{ size: 3 }}>
-              <a href="https://apps.apple.com/us/app/music-note-your-music-history/id1537875594">
-                <Img
-                  alt="Pre-order on the App Store"
-                  fluid={appStoreBadge.node.childImageSharp.fluid}
-                ></Img>
-              </a>
+            <Col xs={{ size: 10, offset: 1 }} md={{ size: 3, offset: 0 }}>
+              <StoreBadge
+                alt="Pre-order on the App Store"
+                fluidImg={appStoreBadge.node.childImageSharp.fluid}
+                href="https://apps.apple.com/us/app/music-note-your-music-history/id1537875594"
+              />
             </Col>
           </Row>
         </Container>
