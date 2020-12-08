@@ -104,7 +104,7 @@ export default class FeaturesPage extends React.Component<FeaturesPageProps> {
                     <Col
                       sm={{ size: 12 }}
                       md={{ size: 6, offset: 0 }}
-                      lg={{ size: 5, offset: 1 }}
+                      lg={{ size: 4, offset: 2 }}
                     >
                       <div
                         dangerouslySetInnerHTML={{
@@ -118,7 +118,7 @@ export default class FeaturesPage extends React.Component<FeaturesPageProps> {
                         <Col
                           sm={{ size: 12 }}
                           md={{ size: 6 }}
-                          lg={{ size: 5 }}
+                          lg={{ size: 4 }}
                         >
                           <ImageWrapper>
                             <Img fluid={image.node.childImageSharp.fluid}></Img>
