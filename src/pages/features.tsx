@@ -146,7 +146,7 @@ export const pageQuery = graphql`
       }
     }
     images: allFile(
-      filter: { relativePath: {}, sourceInstanceName: { eq: "images" } }
+      filter: { relativePath: {}, sourceInstanceName: { eq: "feature images" } }
     ) {
       edges {
         node {

@@ -3,7 +3,7 @@ module.exports = {
     title: `Music Note`,
     description: `Keep track of your music history! Log albums, create lists, import from Spotify and more! Coming soon to Android and iOS`,
     twitterAccount: "@MusicNoteApp",
-    url: "https://www.music-note.app"
+    url: "https://www.music-note.app",
   },
   plugins: [
     {
@@ -16,8 +16,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/images`,
+        name: `feature images`,
+        path: `${__dirname}/src/assets/images/features`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `store badges`,
+        path: `${__dirname}/src/assets/images/store_badges`,
       },
     },
     `gatsby-transformer-remark`,
