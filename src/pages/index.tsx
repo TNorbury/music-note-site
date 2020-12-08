@@ -1,10 +1,15 @@
-import { PageProps } from "gatsby"
+import { graphql, PageProps } from "gatsby"
 import React from "react"
 import { Col, Container, Row } from "reactstrap"
 import styled from "styled-components"
+import { HomePageQuery } from "../../graphql-types"
 import Header from "../components/header"
+import StoreBadge from "../components/store_badge"
 
-const MessageWrapper = styled.h1`
+const MessageWrapperH1 = styled.h1`
+  text-align: center;
+`
+const MessageWrapperH2 = styled.h2`
   text-align: center;
 `
 
@@ -16,6 +21,7 @@ const ImageWrapper = styled.div`
 
   padding-left: 33%;
   padding-right: 33%;
+  padding-top: 1rem;
 
   @media (max-width: 960px) {
     padding-left: 1rem;
@@ -23,27 +29,26 @@ const ImageWrapper = styled.div`
   }
 `
 
-const MoreBetaInfo = styled.h4`
-  text-align: center;
-`
+interface HomePageProps extends PageProps {
+  data: HomePageQuery
+}
 
-export default function Home(props: PageProps) {
+export default function Home(props: HomePageProps) {
+  const images = props.data.allFile.edges
+
+  const playStoreBadge = images.filter(
+    img => img.node.name === "google-play-badge"
+  )[0]
+  const appStoreBadge = images.filter(
+    img => img.node.name === "app_store_preorder_black"
+  )[0]
+
   return (
     <React.Fragment>
       <Header includeDescription={true} path={props.path}>
-        <Container fluid={true}>
+        <Container fluid={false}>
           <Row>
-            <Col>
-              <MessageWrapper>
-                Music Note is currently in open beta!
-              </MessageWrapper>
-              <MoreBetaInfo>
-                <a href="/beta">Click here</a> for more info!
-              </MoreBetaInfo>
-            </Col>
-          </Row>
-          <Row>
-            <Col md="{{ size: 6, offset: 3 }}">
+            <Col md={{ size: 12 }}>
               <ImageWrapper>
                 <img
                   src={`music_note_logo.png`}
@@ -52,8 +57,52 @@ export default function Home(props: PageProps) {
               </ImageWrapper>
             </Col>
           </Row>
+          <Row>
+            <Col>
+              <MessageWrapperH1>
+                Available everywhere December 18th
+              </MessageWrapperH1>
+              <MessageWrapperH2>Pre-register/pre-order now!</MessageWrapperH2>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={{ size: 10, offset: 1 }} md={{ size: 3, offset: 3 }}>
+              <StoreBadge
+                alt="Get it on Google Play"
+                fluidImg={playStoreBadge.node.childImageSharp.fluid}
+                href="https://play.google.com/store/apps/details?id=com.musicnote.album_rater"
+              />
+            </Col>
+
+            <Col xs={{ size: 10, offset: 1 }} md={{ size: 3, offset: 0 }}>
+              <StoreBadge
+                alt="Pre-order on the App Store"
+                fluidImg={appStoreBadge.node.childImageSharp.fluid}
+                href="https://apps.apple.com/us/app/music-note-your-music-history/id1537875594"
+              />
+            </Col>
+          </Row>
         </Container>
       </Header>
     </React.Fragment>
   )
 }
+
+export const pageQuery = graphql`
+  query HomePage {
+    allFile(
+      filter: { relativePath: {}, sourceInstanceName: { eq: "store badges" } }
+    ) {
+      edges {
+        node {
+          name
+          childImageSharp {
+            fluid(maxWidth: 700, pngQuality: 90) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`

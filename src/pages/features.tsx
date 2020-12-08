@@ -101,7 +101,11 @@ export default class FeaturesPage extends React.Component<FeaturesPageProps> {
                 <Feature>
                   <FeatureTag id={feature.frontmatter.feature}></FeatureTag>
                   <Row>
-                    <Col sm={{ size: 12 }} md={{ size: 4, offset: 2 }}>
+                    <Col
+                      sm={{ size: 12 }}
+                      md={{ size: 6, offset: 0 }}
+                      lg={{ size: 4, offset: 2 }}
+                    >
                       <div
                         dangerouslySetInnerHTML={{
                           __html: feature.html,
@@ -111,7 +115,11 @@ export default class FeaturesPage extends React.Component<FeaturesPageProps> {
                     {
                       // Make sure we have an image before trying to display it
                       image && (
-                        <Col sm={{ size: 12 }} md={{ size: 4 }}>
+                        <Col
+                          sm={{ size: 12 }}
+                          md={{ size: 6 }}
+                          lg={{ size: 4 }}
+                        >
                           <ImageWrapper>
                             <Img fluid={image.node.childImageSharp.fluid}></Img>
                           </ImageWrapper>
@@ -146,7 +154,7 @@ export const pageQuery = graphql`
       }
     }
     images: allFile(
-      filter: { relativePath: {}, sourceInstanceName: { eq: "images" } }
+      filter: { relativePath: {}, sourceInstanceName: { eq: "feature images" } }
     ) {
       edges {
         node {
