@@ -63,7 +63,6 @@ export default class Header extends React.Component<HeaderProps, HeaderState> {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavBarItem link="/features" title="Features" />
-              <NavBarItem link="/beta" title="Beta" />
             </Nav>
           </Collapse>
         </Navbar>
