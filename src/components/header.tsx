@@ -6,7 +6,7 @@ import {
   NavbarBrand,
   NavbarToggler,
   NavItem,
-  NavLink
+  NavLink,
 } from "reactstrap"
 import styled from "styled-components"
 import { GlobalStyle, PageWrapper } from "../style/global_style"
@@ -22,7 +22,7 @@ interface HeaderState {
 const Brand = styled.div`
   img {
     width: 250px;
-    @media (max-width: 960px) {
+    @media (max-width: 766px) {
       width: 150px;
     }
   }

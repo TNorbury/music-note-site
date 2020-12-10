@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   //   --staatliches-font-chain: Staatliches, fantasy;
   // }
 
-  @import url('https://fonts.googleapis.com/css?family=Raleway:normal,bold&display=swap')
+  @import url('https://fonts.googleapis.com/css?family=Raleway:normal,bold&display=swap');
   @import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
 
   body {
@@ -44,6 +44,7 @@ export const PageWrapper = styled.div`
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 3.5rem;
+  padding-bottom: 4rem;
 
   @media (max-width: 960px) {
     padding-left: 1rem;

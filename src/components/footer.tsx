@@ -6,19 +6,22 @@ const FooterStyle = styled.footer`
   font-size: 11pt;
   text-align: center;
 
-  border-top-width: 1px;
-  border-top-color: black;
+  border-top-width: 0.5px;
+  border-top-color: #3b3b3b;
   border-top-style: solid;
-  height: 100%;
   margin-top: 0rem;
-  padding-top: 1rem;
+  padding: 1rem 4rem;
 
-  @media (min-height: 850px) {
-    margin-top: 7rem;
+  background-color: #455a64;
+  min-height: 4rem;
+  line-height: 4rem;
+
+  @media (max-width: 768px) {
+    line-height: 2rem;
   }
-  @media (max-width: 960px) {
-    margin-top: 7rem;
-    text-align: left;
+
+  p {
+    margin: 0;
   }
 
   a {
@@ -28,26 +31,45 @@ const FooterStyle = styled.footer`
 
 export default class Footer extends React.Component {
   render() {
+    const xsSize: number = 12
+    const mdSize: number = 6
+    const lgSize: number = 3
     return (
       <FooterStyle>
-        <Container fluid={false}>
+        <Container fluid={true}>
           <Row>
-            <Col md={{ size: 2, offset: 2 }}>
+            <Col
+              xs={{ size: xsSize }}
+              md={{ size: mdSize }}
+              lg={{ size: lgSize }}
+            >
               <p>
                 Built with <a href="https://www.gatsbyjs.com/">Gatsby</a>
               </p>
             </Col>
-            <Col md="2">
+            <Col
+              xs={{ size: xsSize }}
+              md={{ size: mdSize }}
+              lg={{ size: lgSize }}
+            >
               <p>
                 Hosted on <a href="https://www.netlify.com/">Netlify</a>
               </p>
             </Col>
-            <Col md="2">
+            <Col
+              xs={{ size: xsSize }}
+              md={{ size: mdSize }}
+              lg={{ size: lgSize }}
+            >
               <p>
                 <a href="/privacy">Privacy</a>
               </p>
             </Col>
-            <Col md="2">
+            <Col
+              xs={{ size: xsSize }}
+              md={{ size: mdSize }}
+              lg={{ size: lgSize }}
+            >
               <p>
                 <a href="/eula">EULA</a>
               </p>
