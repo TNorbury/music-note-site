@@ -1,6 +1,6 @@
 import { graphql, PageProps } from "gatsby"
 import React from "react"
-import { Col, Container, Row } from "reactstrap"
+import { Col, Row } from "reactstrap"
 import styled from "styled-components"
 import { HomePageQuery } from "../../graphql-types"
 import Header from "../components/header"
