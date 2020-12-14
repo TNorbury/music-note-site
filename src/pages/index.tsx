@@ -62,7 +62,7 @@ export default function Home(props: HomePageProps) {
             lg={{ size: 2, offset: 4 }}
           >
             <StoreBadge
-              alt="Pre-order on the App Store"
+              alt="Download on the App Store"
               fluidImg={appStoreBadge.childImageSharp.fluid}
               href="https://apps.apple.com/us/app/music-note-your-music-history/id1537875594"
             />
