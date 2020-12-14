@@ -58,26 +58,7 @@ export default function MyHelmet(props: MyHelmetProps) {
         <title>{props.title}</title>
         <link href={siteMetadata.url + props.path} rel="canonical" />
 
-        {/* Load the fonts we're using. Raleway is for the body, Staatliches 
-              is for big headers */}
-        <link
-          href="https://fonts.googleapis.com/css?family=Raleway:normal,bold&display=swap"
-          rel="preload"
-          as="style"
-        ></link>
-        <link
-          href="https://fonts.googleapis.com/css?family=Staatliches&display=swap"
-          rel="preload"
-          as="style"
-        ></link>
-        <link
-          href="https://fonts.googleapis.com/css?family=Raleway:normal,bold&display=swap"
-          rel="stylesheet"
-        ></link>
-        <link
-          href="https://fonts.googleapis.com/css?family=Staatliches&display=swap"
-          rel="stylesheet"
-        ></link>
+        <link href="../style/css/typography.scss" rel="stylesheet" />
       </Helmet>
     </HelmetProvider>
   )
