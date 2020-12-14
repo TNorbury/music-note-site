@@ -6,6 +6,8 @@ import { HomePageQuery } from "../../graphql-types"
 import Header from "../components/header"
 import StoreBadge from "../components/store_badge"
 
+import Img from "gatsby-image"
+
 const MessageWrapperH1 = styled.h1`
   text-align: center;
   font-size: 72px;
@@ -15,14 +17,14 @@ const MessageWrapperH2 = styled.h2`
 `
 
 const ImageWrapper = styled.div`
-  img {
+  Img {
     width: 100%;
-    padding-bottom: 2rem;
   }
 
   padding-left: 33%;
   padding-right: 33%;
   padding-top: 1rem;
+  padding-bottom: 2rem;
 
   @media (max-width: 960px) {
     padding-left: 1rem;
@@ -35,7 +37,7 @@ interface HomePageProps extends PageProps {
 }
 
 export default function Home(props: HomePageProps) {
-  const { playStoreBadge, appStoreBadge } = props.data
+  const { playStoreBadge, appStoreBadge, musicNoteLogo } = props.data
 
   return (
     <React.Fragment>
@@ -43,10 +45,10 @@ export default function Home(props: HomePageProps) {
         <Row>
           <Col md={{ size: 12 }}>
             <ImageWrapper>
-              <img
-                src={`music_note_logo.png`}
+              <Img
                 alt="The music note logo. A smiling music note holding a pencil and running"
-              ></img>
+                fluid={musicNoteLogo.childImageSharp.fluid}
+              />
             </ImageWrapper>
           </Col>
         </Row>
@@ -103,6 +105,16 @@ export const pageQuery = graphql`
     ) {
       childImageSharp {
         fluid(maxWidth: 700, pngQuality: 90) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    musicNoteLogo: file(
+      sourceInstanceName: { eq: "mn_graphics" }
+      name: { eq: "music_note_logo" }
+    ) {
+      childImageSharp {
+        fluid(pngQuality: 90) {
           ...GatsbyImageSharpFluid
         }
       }
