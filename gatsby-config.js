@@ -27,6 +27,13 @@ module.exports = {
         path: `${__dirname}/src/assets/images/store_badges`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `mn_graphics`,
+        path: `${__dirname}/src/assets/images/mn_graphics`,
+      },
+    },
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
     {
@@ -37,5 +44,6 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sass`,
   ],
 }

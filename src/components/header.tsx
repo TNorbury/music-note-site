@@ -1,3 +1,5 @@
+import { graphql, StaticQuery } from "gatsby"
+import Img from "gatsby-image"
 import React from "react"
 import {
   Collapse,
@@ -6,9 +8,10 @@ import {
   NavbarBrand,
   NavbarToggler,
   NavItem,
-  NavLink
+  NavLink,
 } from "reactstrap"
 import styled from "styled-components"
+import { GatsbyImageSharpFixedFragment, HeaderQuery } from "../../graphql-types"
 import { GlobalStyle, PageWrapper } from "../style/global_style"
 import Footer from "./footer"
 import MyHelmet, { MyHelmetProps } from "./helmet"
@@ -22,7 +25,7 @@ interface HeaderState {
 const Brand = styled.div`
   img {
     width: 250px;
-    @media (max-width: 960px) {
+    @media (max-width: 766px) {
       width: 150px;
     }
   }
@@ -43,6 +46,30 @@ export default class Header extends React.Component<HeaderProps, HeaderState> {
 
   public render() {
     return (
+      <StaticQuery
+        query={graphql`
+          query Header {
+            musicNoteHeader: file(
+              sourceInstanceName: { eq: "mn_graphics" }
+              name: { eq: "music_note_type" }
+            ) {
+              childImageSharp {
+                fixed(width: 250, pngQuality: 90) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
+          }
+        `}
+        render={({ musicNoteHeader }: HeaderQuery) =>
+          this.buildHeader(musicNoteHeader.childImageSharp.fixed)
+        }
+      />
+    )
+  }
+
+  private buildHeader(headerImage: GatsbyImageSharpFixedFragment): JSX.Element {
+    return (
       <div>
         <GlobalStyle />
         <MyHelmet
@@ -53,9 +80,10 @@ export default class Header extends React.Component<HeaderProps, HeaderState> {
         <Navbar color="dark" dark expand="md" fixed="top">
           <NavbarBrand href="/">
             <Brand>
-              <img
-                src={`/music_note_type.png`}
+              <Img
                 alt="Music Note type logo. Just the words 'Music Note'"
+                fixed={headerImage}
+                fadeIn={false}
               />
             </Brand>
           </NavbarBrand>
