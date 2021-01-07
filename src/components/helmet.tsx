@@ -58,7 +58,7 @@ export default function MyHelmet(props: MyHelmetProps) {
         <title>{props.title}</title>
         <link href={siteMetadata.url + props.path} rel="canonical" />
 
-        <link href="../style/css/typography.scss" rel="stylesheet" />
+        <link href="/fonts/typography.css" rel="stylesheet" />
       </Helmet>
     </HelmetProvider>
   )
